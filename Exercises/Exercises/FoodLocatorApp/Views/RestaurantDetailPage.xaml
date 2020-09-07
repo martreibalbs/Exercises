@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exercises.FoodLocatorApp.Views.RestaurantDetailPage"
+             BackgroundColor="Black" >
+
+    <ContentPage.Content>
+        <Grid>
+
+            <Grid RowSpacing="0"
+                  ColumnSpacing="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Image Grid.Row="0"
+                       Grid.RowSpan="4"
+                       Grid.ColumnSpan="3"
+                       x:Name="RestaurantImageShow"
+                       Margin="-25,-30"
+                       Opacity="0.7"/>
+
+                <Frame Grid.Row="0"
+                       Grid.ColumnSpan="3"
+                       BackgroundColor="Transparent"
+                       Opacity="2"
+                       Padding="20,0">
+
+                    <Grid>
+                        <Image Source="backarrow" 
+                               HorizontalOptions="StartAndExpand"
+                               HeightRequest="55" 
+                               WidthRequest="20" 
+                               VerticalOptions="CenterAndExpand">
+
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="backArrow" 
+                                                      Tapped="backArrow_Tapped" 
+                                                      NumberOfTapsRequired="1"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <Label Text="Restaurant Details"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand"
+                               TextColor="#ffffff"
+                               FontFamily="Roboto-Light.ttf#"
+                               FontSize="15"/>
+
+                        <Image Source="bookmark"
+                               HorizontalOptions="EndAndExpand"
+                               HeightRequest="55" 
+                               WidthRequest="20" 
+                               VerticalOptions="CenterAndExpand"/>
+                    </Grid>
+                </Frame>
+
+                <Image Grid.Row="1"
+                       Grid.ColumnSpan="3"
+                       Source="logo"
+                       Margin="0,6"/>
+
+                <Label Grid.Row="2"
+                       Grid.ColumnSpan="3"
+                       HorizontalOptions="Center"
+                       x:Name="RestaurantNameShow"
+                       TextColor="#ffffff"
+                       FontFamily="LibreBaskerville-Regular.ttf#"
+                       FontSize="18"
+                       Margin="0,0,0,6"/>
+
+
+                <Image Grid.Row="3"
+                       Grid.ColumnSpan="3"
+                       Source="star"
+                       Margin="100,0,0,12"/>
+
+                <Image Grid.Row="3"
+                       Grid.ColumnSpan="3"
+                       Source="star"
+                       Margin="50,0,0,12"/>
+
+                <Image Grid.Row="3"
+                       Grid.ColumnSpan="3"
+                       Source="star"
+                       Margin="0,0,0,12"/>
+
+                <Image Grid.Row="3"
+                       Grid.ColumnSpan="3"
+                       Source="star"
+                       Margin="0,0,50,12"/>
+
+                <Image Grid.Row="3"
+                       Grid.ColumnSpan="3"
+                       Source="star"
+                       Margin="0,0,100,12"/>
+
+                <StackLayout Grid.Row="4"
+                             Grid.ColumnSpan="3"
+                             BackgroundColor="#414c59"
+                             Padding="20"/>
+
+                <Grid Grid.Row="4"
+                      Grid.ColumnSpan="3"
+                      Padding="0"
+                      HorizontalOptions="CenterAndExpand"
+                      BackgroundColor="#414c59">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="0"
+                           Grid.Column="0"
+                           Margin="0,0,0,0"
+                           Source="info"
+                           HeightRequest="15"
+                           VerticalOptions="CenterAndExpand"/>
+
+
+                    <Label Grid.Row="0"
+                           Grid.Column="1"
+                           Margin="0,0,0,0"
+                           x:Name="RestaurantFoodShow"
+                           HorizontalOptions="CenterAndExpand"
+                           TextColor="#ffffff"
+                           FontFamily="Roboto-Light.ttf#"
+                           FontSize="11"
+                           VerticalOptions="CenterAndExpand"/>
+
+                    <Image Grid.Row="0"
+                           Grid.Column="2"
+                           Source="locSmall"
+                           HeightRequest="15"
+                           VerticalOptions="CenterAndExpand"/>
+
+                    <Label Grid.Row="0"
+                           Grid.Column="3" 
+                           Margin="0,0,0,0"
+                           Text="Lektykarska 20 | 20 m" 
+                           HorizontalOptions="StartAndExpand"
+                           TextColor="#ffffff"
+                           FontFamily="Roboto-Light.ttf#"
+                           FontSize="11" 
+                           VerticalOptions="CenterAndExpand"/>
+
+                </Grid>
+
+                <Label Grid.Row="5"
+                       Grid.ColumnSpan="3"
+                       CharacterSpacing="2" 
+                       HorizontalTextAlignment="Center"
+                       x:Name="RestaurantDetailShow"
+                       TextColor="#ffffff"
+                       BackgroundColor="#272e36"
+                       Padding="35,15"
+                       FontFamily="Roboto-Light.ttf#"
+                       FontSize="12"/>
+
+                <StackLayout x:Name="container"
+                             Grid.Row="6" 
+                             Grid.ColumnSpan="3"
+                             Padding="0,0,0,-35"/>
+
+                <Frame Grid.Row="6"
+                       Grid.ColumnSpan="3"
+                       BackgroundColor="#d29f06"
+                       CornerRadius="0"
+                       x:Name="ShowRoute"
+                       VerticalOptions="EndAndExpand">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
+                    </Frame.GestureRecognizers>
+
+                    <Grid>
+
+                        <Image Source="navigate"
+                               HeightRequest="15"
+                               HorizontalOptions="CenterAndExpand"
+                               Margin="0,0,105,0"/>
+
+                        <Label  Text="SHOW ROUTE" 
+                                HorizontalTextAlignment="Center"
+                                TextColor="#ffffff"   
+                                FontAttributes="Bold"
+                                FontFamily="Roboto-Light.ttf#"
+                                HorizontalOptions="CenterAndExpand"
+                                Margin="25,0,0,0"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

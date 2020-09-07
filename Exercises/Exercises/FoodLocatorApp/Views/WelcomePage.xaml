@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exercises.FoodLocatorApp.Views.WelcomePage"
+             BackgroundImageSource="BG">
+    
+    <ContentPage.Content>
+
+        <AbsoluteLayout>
+
+            <Image AbsoluteLayout.LayoutBounds="0.5,0.05,.33,.33"
+                   AbsoluteLayout.LayoutFlags="All"
+                   Source="logo"/>
+
+            <CarouselView AbsoluteLayout.LayoutBounds="0,0,1,1"
+                          AbsoluteLayout.LayoutFlags="All"
+                          x:Name="TheCarousel"     
+                          IndicatorView="indicatorview">
+
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <AbsoluteLayout>
+                            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                     AbsoluteLayout.LayoutFlags="All"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"
+                                     Spacing="0">
+
+                                <Label FontSize="45"
+                                       FontFamily="LibreBaskerville-Bold.ttf#"
+                                       TextColor="#ffffff"             
+                                       HorizontalOptions="Center"                 
+                                       HorizontalTextAlignment="Center"                  
+                                       Text="{Binding First}"                  
+                                       VerticalOptions="Center" />
+
+                                <Label FontSize="45"
+                                       FontFamily="LibreBaskerville-Bold.ttf#"
+                                       TextColor="#d29f06"                   
+                                       HorizontalOptions="Center"                
+                                       HorizontalTextAlignment="Center"                 
+                                       Text="{Binding Fmiddle}"   
+                                       VerticalOptions="Center" />
+
+                                <Label FontSize="45"
+                                       FontFamily="LibreBaskerville-Bold.ttf#"
+                                       TextColor="#ffffff"                   
+                                       HorizontalOptions="Center"             
+                                       HorizontalTextAlignment="Center"                  
+                                       Text="{Binding Smiddle}"                
+                                       VerticalOptions="Center" />
+
+                                <Label Text="{Binding Last}"
+                                       FontFamily="Roboto-Medium.ttf#"
+                                       FontSize="13"
+                                       TextColor="#6a7583"
+                                       HorizontalOptions="Center"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalOptions="Center" />
+
+                            </StackLayout>
+                        </AbsoluteLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <IndicatorView x:Name="indicatorview"
+                           AbsoluteLayout.LayoutBounds="0.5,0.9,100,100"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           IndicatorColor="LightGray"
+                           IndicatorSize="7"  
+                           SelectedIndicatorColor="#d29f06"/>
+
+            <Button AbsoluteLayout.LayoutBounds="0,1,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    Text="start exploring now"                        
+                    TextColor="#ffffff"                   
+                    BackgroundColor="#d29f06"
+                    CornerRadius="0"
+                    Padding="20"
+                    FontFamily="Roboto-Light.ttf#"
+                    VerticalOptions="EndAndExpand"
+                    x:Name="GetStarted"
+                    Clicked="GetStarted_Clicked"/>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

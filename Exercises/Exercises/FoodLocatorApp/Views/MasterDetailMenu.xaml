@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  x:Class="Exercises.FoodLocatorApp.Views.MasterDetailMenu"
+                  Title="Master"
+                  MasterBehavior="Popover">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master" BackgroundColor="Gray" Padding="0">
+            <ContentPage.Content>
+                <StackLayout Margin="5,30,5,5">
+
+                    <Button Text="Browse Restaurant"
+                                x:Name="BrowseRestaurant"
+                                Clicked="BrowseRestaurant_Clicked"/>
+
+                    <Button Text="About"
+                            x:Name="About"
+                            Clicked="About_Clicked"/>
+
+                    <Button Text="Quit"
+                            x:Name="Quit"
+                            Clicked="Quit_Clicked"/>
+
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            <ContentPage.Content>
+                <StackLayout Margin="5,30,5,5">
+                    <Label Text="Detail Page"></Label>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

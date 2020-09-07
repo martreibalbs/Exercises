@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exercises.FoodLocatorApp.Views.BrowsePage"
+             BackgroundColor="#272e36"
+             x:Name="BrowseRestaurant">
+
+    <NavigationPage.TitleView>
+        <Label Text="Browse Restaurant" 
+               HorizontalTextAlignment="Center"
+               Margin="0,0,20,0"
+               FontSize="15"
+               TextColor="#ffffff"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="filter" Priority="0" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+
+        <ListView HasUnevenRows="True"
+                  SelectionMode="None" 
+                  x:Name="myItem"
+                  ItemTapped="myItem_ItemTapped">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Grid RowSpacing="0"
+                              ColumnSpacing="0"
+                              Margin="0"
+                              Padding="25,7.5">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Image Grid.Row="0"
+                                   Source="{Binding RestaurantImage}"/>
+
+
+                            <Grid Grid.Row="1"
+                                  BackgroundColor="#414c59" 
+                                  ColumnSpacing="7.5"
+                                  RowSpacing="10"
+                                  Padding="10">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="15"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="15"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+
+                                <Label Grid.Row="0" 
+                                       Grid.Column="0"
+                                       Grid.ColumnSpan="3"
+                                       Text="{Binding RestaurantName}"
+                                       TextColor="#ffffff" 
+                                       CharacterSpacing=".1"
+                                       FontFamily="LibreBaskerville-Regular.ttf#"
+                                       FontSize="14"/>
+
+                                <Image Grid.Row="0"
+                                       Grid.Column="2"
+                                       Grid.ColumnSpan="3"
+                                       Source="star"
+                                       Margin="5,0"
+                                       HeightRequest="15"
+                                       VerticalOptions="StartAndExpand"
+                                       HorizontalOptions="StartAndExpand"/>
+
+                                <Image Grid.Row="0"
+                                       Grid.Column="2"             
+                                       Grid.ColumnSpan="3"
+                                       Source="star"
+                                       Margin="20,0"
+                                        HeightRequest="15"
+                                       VerticalOptions="StartAndExpand"
+                                       HorizontalOptions="StartAndExpand"/>
+
+                                <Image Grid.Row="0"
+                                       Grid.Column="2"
+                                       Grid.ColumnSpan="3"
+                                       Source="star"
+                                       Margin="35,0"
+                                        HeightRequest="15"
+                                       VerticalOptions="StartAndExpand"
+                                       HorizontalOptions="StartAndExpand"/>
+
+                                <Image Grid.Row="0"
+                                       Grid.Column="2"              
+                                       Grid.ColumnSpan="3"
+                                       Source="star"
+                                       Margin="50,0"
+                                       HeightRequest="15"
+                                       VerticalOptions="StartAndExpand"
+                                       HorizontalOptions="StartAndExpand"/>
+
+                                <Image Grid.Row="0"
+                                       Grid.Column="2"
+                                       Grid.ColumnSpan="3"
+                                       Source="star"
+                                       Margin="65,0"
+                                       HeightRequest="15"
+                                       VerticalOptions="StartAndExpand"
+                                       HorizontalOptions="StartAndExpand"/>
+
+                                <Image Grid.Row="1"
+                                       Grid.Column="0"
+                                       Source="info"/>
+
+                                <Label Grid.Row="1"
+                                       Grid.Column="1" 
+                                       Text="{Binding RestaurantFood}"
+                                       FontSize="9.5"
+                                       CharacterSpacing=".5"
+                                       TextColor="#ffffff"      
+                                       FontFamily="Roboto-Medium.ttf#"/>
+
+                                <Image Grid.Row="1"
+                                       Grid.Column="2"
+                                       Source="locSmall"
+                                       HorizontalOptions="Center"/>
+
+                                <Label Grid.Row="1"
+                                       Grid.Column="3"
+                                       Text="Lektykaraka 20"
+                                       CharacterSpacing=".5"
+                                       TextColor="#ffffff"
+                                       FontSize="9.5"
+                                       FontFamily="Roboto-Medium.ttf#"/>
+
+                                <Frame Grid.Row="0"
+                                       Grid.RowSpan="2"
+                                       Grid.Column="6"
+                                       Padding="10"
+                                       CornerRadius="0"
+                                       BackgroundColor="Transparent"
+                                       BorderColor="#272e36"
+                                       HorizontalOptions="EndAndExpand">
+
+                                    <Image Source="navigate"/>
+
+                                </Frame>
+
+                            </Grid>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
