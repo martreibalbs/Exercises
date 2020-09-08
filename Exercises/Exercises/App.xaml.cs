@@ -16,7 +16,7 @@ namespace Exercises
 
             //MainPage = new MasterDetailMenu();
 
-            MainPage = new NavigationPage( new WelcomePage());
+            MainPage = new NavigationPage( new MainMenuPage());
             //MainPage = new NavigationPage( new Location());
         }
 
